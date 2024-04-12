@@ -30,10 +30,10 @@ public class Pin extends JFrame implements ActionListener{
         l3.setForeground(Color.WHITE);
         
         t1 = new JPasswordField();
-        t1.setFont(new Font("Raleway", Font.BOLD, 25));
+        t1.setFont(new Font("Poppins", Font.BOLD, 25));
         
         t2 = new JPasswordField();
-        t2.setFont(new Font("Raleway", Font.BOLD, 25));
+        t2.setFont(new Font("Poppins", Font.BOLD, 25));
         
         b1 = new JButton("CHANGE");
         b2 = new JButton("BACK");
@@ -65,7 +65,23 @@ public class Pin extends JFrame implements ActionListener{
         l4.add(b2);
         
         setSize(960,1080);
-        setLocation(500,0);
+
+        // Get the screen size
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Set the JFrame size
+        int frameWidth = 960;
+        int frameHeight = 1080;
+
+        // Calculate the center position
+        int x = (screenWidth - frameWidth) / 2;
+        int y = (screenHeight - frameHeight) / 2;
+
+        // Set the JFrame position
+        setLocation(x, y);
+        
         setUndecorated(true);
         setVisible(true);
     
@@ -82,11 +98,13 @@ public class Pin extends JFrame implements ActionListener{
             }
             
             if(ae.getSource()==b1){
-                if (t1.getPassword().toString().equals("")){
+                if (t1.getPassword().length == 0){
                     JOptionPane.showMessageDialog(null, "Enter New PIN");
+                    return;
                 }
-                if (t2.getPassword().toString().equals("")){
+                if (t2.getPassword().length == 0){
                     JOptionPane.showMessageDialog(null, "Re-Enter new PIN");
+                    return;
                 }
                 
                 Conn c1 = new Conn();
@@ -99,12 +117,12 @@ public class Pin extends JFrame implements ActionListener{
                 c1.s.executeUpdate(q3);
 
                 JOptionPane.showMessageDialog(null, "PIN changed successfully");
-                setVisible(false);
+                dispose();
                 new Transactions(rpin).setVisible(true);
             
             }else if(ae.getSource()==b2){
                 new Transactions(pin).setVisible(true);
-                setVisible(false);
+                dispose();
             }
         }catch(Exception e){
             e.printStackTrace();

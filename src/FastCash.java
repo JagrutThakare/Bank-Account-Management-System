@@ -22,7 +22,7 @@ public class FastCash extends JFrame implements ActionListener {
 
         l1 = new JLabel("SELECT WITHDRAWL AMOUNT");
         l1.setForeground(Color.WHITE);
-        l1.setFont(new Font("System", Font.BOLD, 16));
+        l1.setFont(new Font("Poppins", Font.BOLD, 24)); // Increased font size
 
         b1 = new JButton("Rs 100");
         b2 = new JButton("Rs 500");
@@ -34,7 +34,7 @@ public class FastCash extends JFrame implements ActionListener {
 
         setLayout(null);
 
-        l1.setBounds(235, 400, 700, 35);
+        l1.setBounds(180, 400, 700, 35); // Adjusted position
         l3.add(l1);
 
         b1.setBounds(170, 499, 150, 35);
@@ -67,10 +67,25 @@ public class FastCash extends JFrame implements ActionListener {
         b7.addActionListener(this);
 
         setSize(960, 1080);
-        setLocation(500, 0);
+
+        // Get the screen size
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Set the JFrame size
+        int frameWidth = 960;
+        int frameHeight = 1080;
+
+        // Calculate the center position
+        int x = (screenWidth - frameWidth) / 2;
+        int y = (screenHeight - frameHeight) / 2;
+
+        // Set the JFrame position
+        setLocation(x, y);
+
         setUndecorated(true);
         setVisible(true);
-
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -92,14 +107,14 @@ public class FastCash extends JFrame implements ActionListener {
             }
 
             if (ae.getSource() == b7) {
-                this.setVisible(false);
+                this.dispose();
                 new Transactions(pin).setVisible(true);
             }else{
                 Date date = new Date();
                 c.s.executeUpdate("insert into bank values('"+pin+"', '"+date+"', 'Withdrawl', '"+amount+"')");
                 JOptionPane.showMessageDialog(null, "Rs. "+amount+" Debited Successfully");
                     
-                setVisible(false);
+                dispose();
                 new Transactions(pin).setVisible(true);
             }
         } catch (Exception e) {

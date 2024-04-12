@@ -28,7 +28,7 @@ public class Withdrawl extends JFrame implements ActionListener{
         l2.setFont(new Font("System", Font.BOLD, 16));
         
         t1 = new JTextField();
-        t1.setFont(new Font("Raleway", Font.BOLD, 25));
+        t1.setFont(new Font("Poppins", Font.BOLD, 25));
         
         b1 = new JButton("WITHDRAW");
         b2 = new JButton("BACK");
@@ -54,7 +54,22 @@ public class Withdrawl extends JFrame implements ActionListener{
         b2.addActionListener(this);
         
         setSize(960,1080);
-        setLocation(500,0);
+        // Get the screen size
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Set the JFrame size
+        int frameWidth = 960;
+        int frameHeight = 1080;
+
+        // Calculate the center position
+        int x = (screenWidth - frameWidth) / 2;
+        int y = (screenHeight - frameHeight) / 2;
+
+        // Set the JFrame position
+        setLocation(x, y);
+
         setUndecorated(true);
         setVisible(true);
     }
@@ -87,11 +102,11 @@ public class Withdrawl extends JFrame implements ActionListener{
                     c1.s.executeUpdate("insert into bank values('"+pin+"', '"+date+"', 'Withdrawl', '"+amount+"')");
                     JOptionPane.showMessageDialog(null, "Rs. "+amount+" Debited Successfully");
                     
-                    setVisible(false);
+                    dispose();
                     new Transactions(pin).setVisible(true);
                 }
             }else if(ae.getSource()==b2){
-                setVisible(false);
+                dispose();
                 new Transactions(pin).setVisible(true);
             }
         }catch(Exception e){

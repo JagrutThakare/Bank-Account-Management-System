@@ -51,13 +51,28 @@ class BalanceEnquiry extends JFrame implements ActionListener {
         b1.addActionListener(this);
 
         setSize(960, 1080);
+        // Get the screen size
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+
+        // Set the JFrame size
+        int frameWidth = 960;
+        int frameHeight = 1080;
+
+        // Calculate the center position
+        int x = (screenWidth - frameWidth) / 2;
+        int y = (screenHeight - frameHeight) / 2;
+
+        // Set the JFrame position
+        setLocation(x, y);
+
         setUndecorated(true);
-        setLocation(500, 0);
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent ae) {
-        setVisible(false);
+        dispose();
         new Transactions(pin).setVisible(true);
     }
 
