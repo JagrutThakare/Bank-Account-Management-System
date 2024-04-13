@@ -11,6 +11,8 @@ public class MiniStatement extends JFrame implements ActionListener{
     
     MiniStatement(String pin){
         super("Mini Statement");
+        
+        pin = "1234";
         getContentPane().setBackground(Color.WHITE);
         setSize(400,600);
 

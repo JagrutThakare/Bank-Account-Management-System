@@ -1,8 +1,8 @@
-# Hotel Management System
+# BANK ACCOUNT MANAGEMENT SYSTEM
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
-A Java Swing-based hotel management system with MySQL integration.
+A Java Swing-based BANK ACCOUNT MANAGEMENT SYSTEM with MySQL integration.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -13,23 +13,27 @@ A Java Swing-based hotel management system with MySQL integration.
 - [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Configuration](#configuration)
-- [Database Schema](#database-schema)
+- [DFD Diagram](#dfd-diagram)
 - [Reports](#reports)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
 
-The Hotel Management System is a Java-based application designed to simplify and automate various hotel management tasks. It offers an intuitive user interface created with Java Swing and leverages a MySQL database for data storage. This system can be used by hotel staff to manage bookings, customer information, room status, and more efficiently.
+The BANK ACCOUNT MANAGEMENT SYSTEM is a Java-based application designed to simplify and automate various BANK ACCOUNT MANAGEMENT tasks. It offers an intuitive user interface created with Java Swing and leverages a MySQL database for data storage. This system can be used by bank to manage customer accounts.
 
 ## Features
 
-- User-friendly GUI for easy interaction.
-- Management of customer data, including check-in and check-out.
-- Booking management for different room types.
-- Room status tracking and availability.
-- Billing and invoicing system.
-- Reports and statistics generation.
+- User-friendly GUI for easy interaction
+- Management of customer data, including Pin and Card no.
+- Creation of customer accounts
+- Mini Statement
+- Balance Inquiry
+- Pin Change
+- Deposit
+- Login
+- Signup
+- Withdrawal
 
 ## Getting Started
 
@@ -47,7 +51,7 @@ Before you can use or contribute to this project, you need to have the following
 1. Clone the repository to your local machine using Git or download it as a ZIP file.
 
 ```bash
-git clone https://github.com/yourusername/hotel-management-system.git
+git clone https://github.com/JagrutThakare/bank-account-management-system
 ```
 
 2. **Open the project in your preferred Java IDE** (e.g., IntelliJ, Eclipse).
@@ -67,18 +71,31 @@ git clone https://github.com/yourusername/hotel-management-system.git
 ## Usage
 
 - **Launch the application**.
-- Use the GUI to **navigate and perform various hotel management tasks**.
-- Follow the on-screen instructions to **manage customers, bookings, rooms, and generate reports**.
+- Use the GUI to **navigate and perform various BANK ACCOUNT MANAGEMENT tasks**.
+- Follow the on-screen instructions to **signup new customer, login, Mini Statement, and Balance Inquiry**.
 
 ## Screenshots
+### Login
+
 ![Alt text](images/img2.png)
+
+### Deposit
+
 ![Alt text](images/img3.png)
+
+### Application Form
 ![Alt text](images/img4.png)
+
+### Transaction
+
 ![Alt text](images/img5.png)
+
+### Mini Statement
+
 ![Alt text](images/img6.png)
 
 
-## Database Schema
+## DFD Diagram
 ![Alt text](images/img1.png)
 
 ## Contributing
@@ -99,9 +116,3 @@ Please read our **[Contribution Guidelines](CONTRIBUTING.md)** for more details.
 ## License
 
 This project is licensed under the **MIT License** - see the **[LICENSE](LICENSE)** file for details.
-
-
-## Demo Login Details
-
-Card no - 5040936072532014 <br>
-Pin - 4321
