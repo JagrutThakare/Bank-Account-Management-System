@@ -17,12 +17,12 @@ public class Login extends JFrame implements ActionListener {
         Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l11 = new JLabel(i3);
-        l11.setBounds(70, 10, 100, 100);
+        l11.setBounds(170, 10, 100, 100);
         add(l11);
 
         // Title
         l1 = new JLabel("WELCOME TO ATM");
-        l1.setBounds(200, 40, 450, 40);
+        l1.setBounds(300, 40, 450, 40);
         l1.setFont(new Font("Poppins", Font.BOLD, 24)); // Increased font size
         add(l1);
 
