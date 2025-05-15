@@ -1,5 +1,4 @@
 # BANK ACCOUNT MANAGEMENT SYSTEM
-
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
 A Java Swing-based BANK ACCOUNT MANAGEMENT SYSTEM with MySQL integration.
